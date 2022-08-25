@@ -1,0 +1,33 @@
+
+<br>
+<h4>Update Airplane Information</h4>
+<hr> 
+{{#if alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{alert}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#each airplanes}}
+<form method="POST" action="/airplane/editAirplane/{{this.aircraft_code}}" novalidate>
+  <div class="mb-3">
+    <label>Aircraft code: <strong>{{this.aircraft_code}}</strong></label>
+  </div>
+  <div class="mb-3">
+    <label>Model</label>
+    <input type="text" value="{{this.model}}" name="model">
+  </div>
+  <div class="mb-3">
+    <label>Maintenance ID</label>
+    <input type="number" value="{{this.maintenance_id}}" name="maintenance_id">
+  </div>
+  <div class="mb-3">
+    <label>Service ID</label>
+    <input type="number" value="{{this.service_id}}" name="service_id">
+  </div>
+  
+  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  <a href="/airplane" type="button" class="btn btn-secondary btn-sm">Back to Airplane</a>
+</form>
+{{/each}}

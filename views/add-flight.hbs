@@ -1,0 +1,41 @@
+<br>
+<h4>New Flight Information</h4>
+<hr> <!--line-->
+{{#if alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{alert}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+<form method="post" action="/flight/addFlight" novalidate>
+  <div class="mb-3">
+    <label>Flight ID</label>
+    <input type="text" placeholder="example: US123" name="flight_id">
+  </div>
+  <div class="mb-3">
+    <label>Departure date</label>
+    <input type="date" name="departure_date">
+  </div>
+  <div class="mb-3">
+    <label>Departure time</label>
+    <input type="time" name="departure_time">
+  </div>
+  <div class="mb-3">
+    <label>Arrival date</label>
+    <input type="date" name="arrival_date">
+  </div>
+  <div class="mb-3">
+    <label>Arrival time</label>
+    <input type="time" name="arrival_time">
+  </div>
+  <div class="mb-3">
+    <label>Departure airport</label>
+    <input type="text" placeholder="example: IAH" name="departure_airport">
+  </div>
+  <div class="mb-3">
+    <label>Arrival airport</label>
+    <input type="text" placeholder="example: LAX" name="arrival_airport">
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  <a href="/flight" type="button" class="btn btn-secondary btn-sm">Back to Flight</a>
+</form>

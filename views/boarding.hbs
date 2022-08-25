@@ -1,0 +1,47 @@
+<h4 class="text-center">Boarding</h4>
+
+<form class="text-center" method="POST" action="/boarding" novalidate>
+  <label>Search Boarding Information</label>
+  <input type="search" placeholder="Enter Boarding ID" name="search" aria-label="Search">
+  <button class="btn btn-primary btn-sm">Search</button>
+</form>
+<form class="text-center pt-2 pb-2" method="GET" action="/boarding" novalidate>
+  <button class="btn btn-primary btn-sm">See All Boarding Info</button>
+  <a href="/boarding/addBoarding" type="button" class="btn btn-primary btn-sm">Add Boarding Info</a>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Boarding ID</th>
+      <th scope="col">Flight ID</th>
+      <th scope="col">Ticket number</th>
+      <th scope="col">Boarding time</th>
+      <th scope="col">Gate</th>
+      <th scope="col">Seat number</th>
+      <th scope="col">Baggage claim number</th>
+      <th scope="col" class="text-center">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each boarding}}
+    <tr>
+      <th scope="row">{{this.boarding_id}}</th>
+      <td>{{this.flight_id}}</td>
+      <td>{{this.ticket_no}}</td>
+      <td>{{this.boarding_time}}</td>
+      <td>{{this.gate}}</a></td>
+      <td>{{this.seat_no}}</td>
+      <td>{{this.baggage_id}}</td>
+      <td class="text-center">
+        <a href="/boarding/viewGate/{{this.gate}}" type="button" class="btn btn-light btn-small">View Gate</a>
+        <a href="/boarding/editBoarding/{{this.boarding_id}}" type="button" class="btn btn-light btn-small"><i
+            class="bi bi-pencil"></i> Edit</a>
+        <a href="/boarding/{{this.boarding_id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-trash"></i>
+          Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

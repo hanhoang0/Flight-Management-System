@@ -1,0 +1,41 @@
+<br>
+<h4>New Boarding Information</h4>
+<hr> <!--line-->
+{{#if alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{alert}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+<form method="post" action="/boarding/addBoarding" novalidate>
+  <div class="mb-3">
+    <label>Boarding ID</label>
+    <input type="number" placeholder="example: 101" name="boarding_id">
+  </div>
+  <div class="mb-3">
+    <label>Flight ID</label>
+    <input type="text" name="flight_id">
+  </div>
+  <div class="mb-3">
+    <label>Ticket number</label>
+    <input type="number" placeholder="" name="ticket_no">
+  </div>
+  <div class="mb-3">
+    <label>Boarding time</label>
+    <input type="time" name="boarding_time">
+  </div>
+  <div class="mb-3">
+    <label>Gate</label>
+    <input type="text" placeholder="" name="gate">
+  </div>
+  <div class="mb-3">
+    <label>Seat number</label>
+    <input type="text" placeholder="" name="seat_no">
+  </div>
+  <div class="mb-3">
+    <label>Baggage claim no</label>
+    <input type="text" placeholder="" name="baggage_id">
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  <a href="/boarding" type="button" class="btn btn-secondary btn-sm">Back to Boarding</a>
+</form>

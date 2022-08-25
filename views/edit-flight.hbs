@@ -1,0 +1,44 @@
+
+<br>
+<h4>Update Flight Information</h4>
+<hr> 
+{{#if alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{alert}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#each flights}}
+<form method="POST" action="/flight/editFlight/{{this.flight_id}}" novalidate>
+  <div class="mb-3">
+    <label>Flight ID: <strong>{{this.flight_id}}</strong></label>
+  </div>
+  <div class="mb-3">
+    <label>Departure date (Date required)</label>
+    <input type="date" value="{{this.departure_date}}" name="departure_date">
+  </div>
+  <div class="mb-3">
+    <label>Departure time</label>
+    <input type="time" value="{{this.departure_time}}" name="departure_time">
+  </div>
+  <div class="mb-3">
+    <label>Arrival date (Date required)</label>
+    <input type="date" value="{{this.arrival_date}}" name="arrival_date">
+  </div>
+  <div class="mb-3">
+    <label>Arrival time</label>
+    <input type="time" value="{{this.arrival_time}}" name="arrival_time">
+  </div>
+  <div class="mb-3">
+    <label>Departure airport</label>
+    <input type="text" value="{{this.departure_airport}}" name="departure_airport">
+  </div>
+  <div class="mb-3">
+    <label>Arrival airport</label>
+    <input type="text" value="{{this.arrival_airport}}" name="arrival_airport">
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  <a href="/flight" type="button" class="btn btn-secondary btn-sm">Back to Flight</a>
+</form>
+{{/each}}

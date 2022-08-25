@@ -1,0 +1,43 @@
+<br>
+<h4>Update Boarding Information</h4>
+<hr> 
+{{#if alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{alert}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#each boarding}}
+<form method="POST" action="/boarding/editBoarding/{{this.boarding_id}}" novalidate>
+  <div class="mb-3">
+    <label>Boarding ID: <strong>{{this.boarding_id}}</strong></label>
+  </div>
+  <div class="mb-3">
+    <label>Flight ID</label>
+    <input type="text" value="{{this.flight_id}}" name="flight_id">
+  </div>
+  <div class="mb-3">
+    <label>Ticket number</label>
+    <input type="number" value="{{this.ticket_no}}" name="ticket_no">
+  </div>
+  <div class="mb-3">
+    <label>Boarding time</label>
+    <input type="time" value="{{this.boarding_time}}" name="boarding_time">
+  </div>
+  <div class="mb-3">
+    <label>Gate</label>
+    <input type="text" value="{{this.gate}}" name="gate">
+  </div>
+  <div class="mb-3">
+    <label>Seat number</label>
+    <input type="text" value="{{this.seat_no}}" name="seat_no">
+  </div>
+  <div class="mb-3">
+    <label>Baggage claim no</label>
+    <input type="text" value="{{this.baggage_id}}" name="baggage_id">
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  <a href="/boarding" type="button" class="btn btn-secondary btn-sm">Back to Boarding</a>
+</form>
+{{/each}}

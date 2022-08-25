@@ -1,0 +1,52 @@
+{{#if alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{alert}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+<h4 class="text-center">Flight</h4>
+
+<form class="text-center" method="POST" action="/flight" novalidate>
+  <label>Search flight:</label>
+  <input type="search" placeholder="Enter Flight ID" name="search" aria-label="Search">
+  <button class="btn btn-primary btn-sm">Search</button>
+</form>
+<form class="text-center pt-2 pb-2" method="GET" action="/flight" novalidate>
+  <button class="btn btn-primary btn-sm">See All Flights</button>
+  <a href="/flight/addFlight" type="button" class="btn btn-primary btn-sm">Add Flight</a>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Flight ID</th>
+      <th scope="col">Departure date</th>
+      <th scope="col">Departure time</th>
+      <th scope="col">Arrival date</th>
+      <th scope="col">Arrival date</th>
+      <th scope="col">Departure airport</th>
+      <th scope="col">Arrival airport</th>
+      <th scope="col" class="text-center">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each flights}}
+    <tr>
+      <th scope="row">{{this.flight_id}}</th>
+      <td>{{this.departure_date}}</td>
+      <td>{{this.departure_time}}</td>
+      <td>{{this.arrival_date}}</td>
+      <td>{{this.arrival_time}}</td>
+      <td>{{this.departure_airport}}</td>
+      <td>{{this.arrival_airport}}</td>
+      <td class="text-center">
+        <a href="/flight/editFlight/{{this.flight_id}}" type="button" class="btn btn-light btn-small"><i
+            class="bi bi-pencil"></i> Edit</a>
+        <a href="/flight/{{this.flight_id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-trash"></i>
+          Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

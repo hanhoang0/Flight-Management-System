@@ -1,0 +1,15 @@
+<br>
+<h4>Gate-Aircraft Information</h4>
+<hr>
+<!--line-->
+<div class="view-gate">
+  {{#each gates}}
+  <div class="mb-3">
+    <label>Gate: <strong>{{this.gate_no}}</strong></label>
+  </div>
+  <div class="mb-3">
+    <label>Aircraft code: {{this.aircraft_code}}</label>
+  </div>
+  <a href="/boarding" type="button" class="btn btn-secondary btn-sm">Back to Boarding</a>
+  {{/each}}
+</div>

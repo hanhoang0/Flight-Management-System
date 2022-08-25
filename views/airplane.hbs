@@ -1,0 +1,42 @@
+<h4 class="text-center">Airplane</h4>
+
+<form class="text-center" method="POST" action="/airplane" novalidate>
+  <label>Search airplane:</label>
+  <input type="search" placeholder="Enter aircraft code" name="search" aria-label="Search">
+  <button class="btn btn-primary btn-sm">Search</button>
+</form>
+<form class="text-center pt-2 pb-2" method="GET" action="/airplane" novalidate>
+  <button class="btn btn-primary btn-sm">See All Airplanes</button>
+  <a href="/airplane/addAirplane" type="button" class="btn btn-primary btn-sm">Add Airplane</a>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Aircraft code</th>
+      <th scope="col">Model</th>
+      <th scope="col">Maintenance</th>
+      <th scope="col">Service</th>
+      <th scope="col" class="text-center">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each airplanes}}
+    <tr>
+      <th scope="row">{{this.aircraft_code}}</th>
+      <td>{{this.model}}</td>
+      <td>
+        <a href="/airplane/viewMaintenance/{{this.maintenance_id}}" type="button" class="btn btn-light btn-small">View</a>
+      </td>
+      <td>
+        <a href="/airplane/viewService/{{this.service_id}}" type="button" class="btn btn-light btn-small">View</a>
+      </td>
+      <td class="text-center">
+        <a href="/airplane/editAirplane/{{this.aircraft_code}}" type="button" class="btn btn-light btn-small"><i
+            class="bi bi-pencil"></i> Edit</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

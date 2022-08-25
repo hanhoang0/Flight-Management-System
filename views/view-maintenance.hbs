@@ -1,0 +1,31 @@
+<br>
+<h4>Maintenance Information</h4>
+
+<!--line-->
+<div class="view-maintenance p-5">
+  {{#each maintenance}}
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Aircraft code</th>
+            <th scope="col">Maintenance ID</th>
+            <th scope="col">Refueling</th>
+            <th scope="col">Cleaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{this.aircraft_code}}</th>
+            <td>{{this.maintenance_id}}</td>
+            <td>{{this.refueling}}</td>
+            <td>{{this.cleaning}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <a href="/airplane" type="button" class="btn btn-secondary btn-sm">Back to Airplane</a>
+  {{/each}}
+</div>

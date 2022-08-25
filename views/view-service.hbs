@@ -1,0 +1,35 @@
+<br>
+<h4>Service Information</h4>
+
+<!--line-->
+<div class="view-service p-5">
+  {{#each service}}
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Aircraft code</th>
+            <th scope="col">Service ID</th>
+            <th scope="col">Food</th>
+            <th scope="col">Beverage</th>
+            <th scope="col">Movie</th>
+            <th scope="col">Wifi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{this.aircraft_code}}</th>
+            <td>{{this.service_id}}</td>
+            <td>{{this.food}}</td>
+            <td>{{this.beverage}}</td>
+            <td>{{this.movie}}</td>
+            <td>{{this.wifi}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <a href="/airplane" type="button" class="btn btn-secondary btn-sm">Back to Airplane</a>
+  {{/each}}
+</div>

@@ -1,0 +1,30 @@
+<br>
+<h4>New Airplane Information</h4>
+<hr> <!--line-->
+{{#if alert}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{alert}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+<form method="post" action="/airplane/addAirplane" novalidate>
+  <div class="mb-3">
+    <label>Aircraft code</label>
+    <input type="text" placeholder="example: 319" name="aircraft_code">
+  </div>
+  <div class="mb-3">
+    <label>Model</label>
+    <input type="text" placeholder="example: Airbus A319" name="model">
+  </div>
+  <div class="mb-3">
+    <label>Maintenance ID</label>
+    <input type="number" min="1" max="20" name="maintenance_id" >
+  </div>
+  <div class="mb-3">
+    <label>Service ID</label>
+    <input type="number"  min="1" max="20" name="service_id">
+  </div>
+  
+  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  <a href="/airplane" type="button" class="btn btn-secondary btn-sm">Back to Airplane</a>
+</form>
