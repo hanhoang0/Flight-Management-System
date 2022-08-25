@@ -1,4 +1,5 @@
 **Introduction**
+
 Flight Management System is my first full-stack project for my Design of File and Database Systems class. It is a Javascript-based web application that allows users to view, create, update and delete any information about flights, boarding and airplanes. For example, in boarding tab, you can view extra information of the boarding gate and in airplane tab, you can view extra information of maintenance, service of the airplane and so on.
 
 **Dependencies**: express, cors, pg, express-handlebars
